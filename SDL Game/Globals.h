@@ -16,6 +16,7 @@ enum update_status
 // Configuration -----------
 #define SCREEN_WIDTH 1024
 #define SCREEN_HEIGHT 768
-#define FULLSCREEN 0
+#define FULLSCREEN false
+#define RESIZABLE true
 #define TITLE "SMILE TRAIN"
 

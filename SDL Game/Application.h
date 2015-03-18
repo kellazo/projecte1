@@ -5,6 +5,7 @@
 #include "Module.h"
 #include "Dummy.h"
 #include "ModuleWindow.h"
+#include "ModuleRender.h"
 
 class Application
 {
