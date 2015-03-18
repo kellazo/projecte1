@@ -38,7 +38,8 @@ bool ModuleWindow::Init()
 
 		// TODO: SDL_WINDOW_BORDERLESS, SDL_WINDOW_RESIZABLE,  SDL_WINDOW_FULLSCREEN_DESKTOP
 
-		window = SDL_CreateWindow("", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
+
+		window = SDL_CreateWindow(TITLE, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
 
 		if(window == NULL)
 		{
