@@ -18,6 +18,8 @@ private:
 
 	Uint32 start_time;
 	Uint32 total_time;
+	Module* off;
+	Module* on;
 	SDL_Rect screen;
 	bool fading_in;
 };

@@ -3,10 +3,10 @@
 #include "Application.h"
 #include "ModuleFadeToBlack.h"
 
-ModuleFadeToBlack::ModuleFadeToBlack(Application* app, bool start_enabled) : 
-Module(app, start_enabled), 
-start_time(0), 
-total_time(0), 
+ModuleFadeToBlack::ModuleFadeToBlack(Application* app, bool start_enabled) :
+Module(app, start_enabled),
+start_time(0),
+total_time(0),
 fading_in(true)
 {
 	screen = {0, 0, SCREEN_WIDTH * SCREEN_SIZE, SCREEN_HEIGHT * SCREEN_SIZE};
@@ -48,6 +48,8 @@ update_status ModuleFadeToBlack::Update()
 				start_time = SDL_GetTicks();
 				fading_in = false;
 				// TODO 2: Fer un disable / enable dels moduls rebuts a FadeToBlack()
+				off->Disable();
+				on->Enable();
 			}
 			else
 				start_time = 0;
@@ -63,4 +65,8 @@ void ModuleFadeToBlack::FadeToBlack(Module* module_off, Module* module_on, float
 	fading_in = true;
 	start_time = SDL_GetTicks();
 	total_time = (Uint32) (time * 0.5f * 1000.0f);
+	//guardem les variables
+	off = module_off;
+	on = module_on;
+
 }

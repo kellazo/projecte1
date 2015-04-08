@@ -54,6 +54,13 @@ bool ModuleSceneKen::Start()
 	graphics = App->textures->Load("ken_stage.png");
 
 	// TODO 1: Fer Enable/Disable del jugador i posar la musica
+	LOG("Enable player Ken");
+	App->player->Enable();
+	
+
+	LOG("Enable audio");
+	App->audio->Enable();
+	App->audio->PlayMusic("ken.ogg");
 	
 	return true;
 }
@@ -92,6 +99,10 @@ update_status ModuleSceneKen::Update()
 	App->renderer->Blit(graphics, 0, 170, &ground);
 
 	// TODO 3: Fer que al apretar el espai es façi un fade i es carregui HondaStage
+	if (App->input->keyboard[SDL_SCANCODE_SPACE] == 1)
+	{
+		App->fade->FadeToBlack(App->scene_ken, App->scene_honda);// 5.0f 5 segons , per defecte son 2
+	}
 
 	return UPDATE_CONTINUE;
 }
