@@ -39,8 +39,9 @@ bool ModulePlayer::Start()
 	position.x = 150;
 	position.y = 120;
 
+	
 	// TODO 2: Afegir collider al jugador
-
+	App->collision->AddCollider({ position.x, position.y, 14, 14 }, COLLIDER_PLAYER);
 	return true;
 }
 
@@ -98,6 +99,8 @@ update_status ModulePlayer::Update()
 		current_animation = &idle;
 
 	// TODO 3: Actualitzar la posicio del collider del jugador perque el segueixi
+	
+
 
 	// Draw everything --------------------------------------
 
